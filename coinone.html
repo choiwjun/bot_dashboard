@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <link rel="icon" href="images/ico/favicon.svg">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <script src="js/jquery.js"></script>
+    <script src="js/style.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="js/adminlte.min.js"></script>
+    <script src="js//Chart.min.js"></script>
+    <script src="js/demo.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/hamburgers.css" />
+    <link rel="stylesheet" href="css/adminlte.min.css">
+    <title>Bot_dashboard</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <div class="top_menu">
+            <div class="logo">
+                <h1>
+                    <a href="index.html">
+                        <img src="images/ico/nav_logo.svg" alt="kdax" />
+                    </a>
+                </h1>
+                <div class="hamburger hamburger--slider">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--
+        <div class="top_setting">
+            <ul>
+                <li>설정</li>
+                <li>로그아웃</li>
+            </ul>
+        </div>
+        -->
+    </header>
+    <content>
+        <div class="p_slide_bar">
+            <div>
+                <ul>
+                    <li>
+                        <span class="on">
+                            <a href="index.html">
+                                <img src="images/ico/logo_asta.png" src="" />ASTA
+                            </a>
+                        </span>
+                        <span>
+                            <p>58.45</p>
+                            <p class="text-success">+01.34 % ↑</p>
+                        </span>
+
+                        <!-- 2depth-->
+                        <div class="p_slide_sub_wrap">
+                            <h2>상장거래소</h2>
+                            <p>
+                            <div class="pull-left">
+                                <a href="coinone.html">
+                                    <img src="images/ico/ico_coinone.jpg" src="" />코인원
+                                </a>
+                            </div>
+                            <div class="pull-right">
+                                <p>58.45</p>
+                                <p class="text-success ft800">+01.34 % ↑</p>
+                            </div>
+                            </p>
+                            <p>
+                            <div class="pull-left">
+                                <img src="images/ico/ico_cashierest.jpg" src="" />캐셔레스트
+                            </div>
+                            <div class="pull-right">
+                                <p>58.45</p>
+                                <p class="text-danger ft800">+01.34 % ↓</p>
+                            </div>
+                            </p>
+                            <p>
+                            <div class="pull-left">
+                                <img src="images/ico/ico_bitsonic.jpg" src="" />비트소닉
+                            </div>
+                            <div class="pull-right">
+                                <p>58.45</p>
+                                <p class="text-success ft800">+01.34 % ↑</p>
+                            </div>
+                            </p>
+                        </div>
+                        <!-- 2depth-->
+                    </li>
+                    <li>
+                        <span>
+                            <img src="images/ico/logo_bmp.png" alt="" />BMP
+                        </span>
+                        <span>
+                            <p>58.45</p>
+                            <p class="text-danger">+01.34 % ↓</p>
+                        </span>
+                        <!-- 2depth-->
+                        <div class="p_slide_sub_wrap">
+                            <h2>상장거래소</h2>
+                            <p>
+                            <div class="pull-left">
+                                <img src="images/ico/ico_coinone.jpg" src="" />코인원
+                            </div>
+                            <div class="pull-right">
+                                <p>58.45</p>
+                                <p class="text-success ft800">+01.34 % ↑</p>
+                            </div>
+                            </p>
+                            <p>
+                            <div class="pull-left">
+                                <img src="images/ico/ico_cashierest.jpg" src="" />캐셔레스트
+                            </div>
+                            <div class="pull-right">
+                                <p>58.45</p>
+                                <p class="text-danger ft800">+01.34 % ↓</p>
+                            </div>
+                            </p>
+                            <p>
+                            <div class="pull-left">
+                                <img src="images/ico/ico_bitsonic.jpg" src="" />비트소닉
+                            </div>
+                            <div class="pull-right">
+                                <p>58.45</p>
+                                <p class="text-success ft800">+01.34 % ↑</p>
+                            </div>
+                            </p>
+                        </div>
+                        <!-- 2depth-->
+                    </li>
+                    <li>
+                        <span>
+                            <img src="images/ico/logo_myce.png" alt="" />MYCE
+                        </span>
+                        <span>
+                            <p>58.45</p>
+                            <p class="text-success">+01.34 % ↑</p>
+                        </span>
+                        <!-- 2depth-->
+                        <div class="p_slide_sub_wrap">
+                            <h2>상장거래소</h2>
+                            <p>
+                            <div class="pull-left">
+                                <img src="images/ico/ico_coinone.jpg" src="" />코인원
+                            </div>
+                            <div class="pull-right">
+                                <p>58.45</p>
+                                <p class="text-success ft800">+01.34 % ↑</p>
+                            </div>
+                            </p>
+                            <p>
+                            <div class="pull-left">
+                                <img src="images/ico/ico_cashierest.jpg" src="" />캐셔레스트
+                            </div>
+                            <div class="pull-right">
+                                <p>58.45</p>
+                                <p class="text-danger ft800">+01.34 % ↓</p>
+                            </div>
+                            </p>
+                            <p>
+                            <div class="pull-left">
+                                <img src="images/ico/ico_bitsonic.jpg" src="" />비트소닉
+                            </div>
+                            <div class="pull-right">
+                                <p>58.45</p>
+                                <p class="text-success ft800">+01.34 % ↑</p>
+                            </div>
+                            </p>
+                        </div>
+                        <!-- 2depth-->
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content_wrap">
+            <h1 class="row col-12">
+                ASTA / Coninone
+            </h1>
+            <div class="total_money">
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h3 class="card-title">자산현황</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body row">
+                        <div class="total_money_list col-12 col-lg-8">
+                            <div class="col-12 col-lg-6">
+                                <h2>
+                                    총 자산
+                                </h2>
+                                <p>
+                                    5,230,000,000 <span style="font-size:24px">원</span><br />
+                                    <span class="text-success">+ 248.23(+0.35%)</span>
+                                </p>
+                            </div>
+                            <div class="col-12 col-lg-5">
+                                <h2>
+                                    보유현황
+                                </h2>
+                                <p>
+                                <ul>
+                                    <li><span class="pull-left text-danger" style="font-size:16px">보유원화</span>
+                                        <span class="pull-right">2,352,125<span style="font-size:16px">원</span></span>
+                                    </li>
+                                    <li><span class="pull-left c0277bd" style="font-size:16px">가상자산</span>
+                                        <span class="pull-right">2,352,125<span style="font-size:16px">원</span></span>
+                                        <br />
+                                        <span class="pull-right" style="font-size:16px;margin-top:-10px;clear:both;">(223,760.99999
+                                            ASTA)</span>
+                                    </li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <canvas id="donutChart" class="top_chart1"
+                                style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /. 자산현황 -->
+
+            <!-- /. 마켓별 현황 그래프 카드-->
+            <div class="money_list_wrap row">
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="card card-info">
+                        <div class="card-header">
+                            <h3 class="card-title" style="font-size:18px !important">자산규모 변동 추이</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body row">
+                            <div class="total_money_list col-12" style="border:none">
+                                <div class="col-12">
+                                    <div class="col-12">
+                                        <select class="pull-right form-select">
+                                            <option selected>일간</option>
+                                            <option value="1">주간</option>
+                                            <option value="2">월간</option>
+                                        </select>
+                                    </div>
+                                    <div class="chart col-12">
+                                        <canvas id="areaChart"
+                                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="card card-info">
+                        <div class="card-header">
+                            <h3 class="card-title" style="font-size:18px !important">가격 변동 추이</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body row">
+                            <div class="total_money_list col-12" style="border:none">
+                                <div class="col-12">
+                                    <div class="col-12">
+                                        <div class="pull-left">
+                                            <dl>
+                                                <dt>고</dt>
+                                                <dd class="text-danger">41.35</dd>
+                                                <dt>저</dt>
+                                                <dd class="text-blue">39.69</dd>
+                                                <dt>거래량</dt>
+                                                <dd class="text-info">1111</dd>
+                                            </dl>
+                                        </div>
+                                        <select class="form-select pull-right">
+                                            <option selected>일간</option>
+                                            <option value="1">주간</option>
+                                            <option value="2">월간</option>
+                                        </select>
+                                    </div>
+                                    <div class="chart col-12">
+                                        <canvas id="lineChart"
+                                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                </div>
+            </div>
+            <!-- /. 변동 그래프 카드-->
+            <div class="money__detail_list_wrap row">
+                <div class="col-12">
+                    <div class="card card-info">
+                        <div class="card-header">
+                            <h3 class="card-title" style="font-size:18px !important">자산변동 상세내역</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body table-responsive p-0" style="height:565px;">
+                            <div class="col-12 mt20">
+                                <select class="form-select pull-right">
+                                    <option selected>2021-002-05 21:00 - 2021-02-06 12:00</option>
+                                </select>
+                            </div>
+                            <table class="table table-head-fixed text-nowrap col-12">
+                                <thead>
+                                    <tr>
+                                        <th>거래소</th>
+                                        <th>기간</th>
+                                        <th>시장가</th>
+                                        <th>총자산</th>
+                                        <th>보유원화</th>
+                                        <th>가상자산</th>
+                                        <th>보유수량</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="center" rowspan="3">total</td>
+                                        <td align="center"></td>
+                                        <td align="center"></td>
+                                        <td align="center" class="text-success text-bold">+ 2,566 만</td>
+                                        <td align="center" class="text-success text-bold">+ 5,777만</td>
+                                        <td align="center" class="text-success text-bold">+ 238 만</td>
+                                        <td align="center" class="text-success text-bold">(4,032,548.48)</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" class="c999">2021-02-05 12:00</td>
+                                        <td align="center" class="c999">60.01</td>
+                                        <td align="center" class="c999">2,566 만</td>
+                                        <td align="center" class="c999">5,777만</td>
+                                        <td align="center" class="c999">238 만</td>
+                                        <td align="center" class="c999">(4,032,548.48)</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">2021-02-06 12:00</td>
+                                        <td align="center">60.01</td>
+                                        <td align="center">2,566 만</td>
+                                        <td align="center">5,777만</td>
+                                        <td align="center">238 만</td>
+                                        <td align="center">(4,032,548.48)</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" rowspan="3">코인원</td>
+                                        <td align="center"></td>
+                                        <td align="center"></td>
+                                        <td align="center" class="text-success text-bold">+ 2,566 만</td>
+                                        <td align="center" class="text-success text-bold">+ 5,777만</td>
+                                        <td align="center" class="text-success text-bold">+ 238 만</td>
+                                        <td align="center" class="text-success text-bold">(4,032,548.48)</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" class="c999">2021-02-05 12:00</td>
+                                        <td align="center" class="c999">60.01</td>
+                                        <td align="center" class="c999">2,566 만</td>
+                                        <td align="center" class="c999">5,777만</td>
+                                        <td align="center" class="c999">238 만</td>
+                                        <td align="center" class="c999">(4,032,548.48)</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">2021-02-06 12:00</td>
+                                        <td align="center">60.01</td>
+                                        <td align="center">2,566 만</td>
+                                        <td align="center">5,777만</td>
+                                        <td align="center">238 만</td>
+                                        <td align="center">(4,032,548.48)</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" rowspan="3">캐셔레스트</td>
+                                        <td align="center"></td>
+                                        <td align="center"></td>
+                                        <td align="center" class="text-success text-bold">+ 2,566 만</td>
+                                        <td align="center" class="text-success text-bold">+ 5,777만</td>
+                                        <td align="center" class="text-success text-bold">+ 238 만</td>
+                                        <td align="center" class="text-success text-bold">(4,032,548.48)</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" class="c999">2021-02-05 12:00</td>
+                                        <td align="center" class="c999">60.01</td>
+                                        <td align="center" class="c999">2,566 만</td>
+                                        <td align="center" class="c999">5,777만</td>
+                                        <td align="center" class="c999">238 만</td>
+                                        <td align="center" class="c999">(4,032,548.48)</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">2021-02-06 12:00</td>
+                                        <td align="center">60.01</td>
+                                        <td align="center">2,566 만</td>
+                                        <td align="center">5,777만</td>
+                                        <td align="center">238 만</td>
+                                        <td align="center">(4,032,548.48)</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" rowspan="3">비트소닉</td>
+                                        <td align="center"></td>
+                                        <td align="center"></td>
+                                        <td align="center" class="text-success text-bold">+ 2,566 만</td>
+                                        <td align="center" class="text-success text-bold">+ 5,777만</td>
+                                        <td align="center" class="text-success text-bold">+ 238 만</td>
+                                        <td align="center" class="text-success text-bold">(4,032,548.48)</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" class="c999">2021-02-05 12:00</td>
+                                        <td align="center" class="c999">60.01</td>
+                                        <td align="center" class="c999">2,566 만</td>
+                                        <td align="center" class="c999">5,777만</td>
+                                        <td align="center" class="c999">238 만</td>
+                                        <td align="center" class="c999">(4,032,548.48)</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">2021-02-06 12:00</td>
+                                        <td align="center">60.01</td>
+                                        <td align="center">2,566 만</td>
+                                        <td align="center">5,777만</td>
+                                        <td align="center">238 만</td>
+                                        <td align="center">(4,032,548.48)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /. 자산변동내용 카드-->
+        </div>
+    </content>
+</body>
+
+</html>

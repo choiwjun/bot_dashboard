@@ -1,0 +1,255 @@
+html,
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.hamburger {
+  padding: 2px 0 !important;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  z-index: 100;
+  background: #2a2b36;
+  height: 70px;
+}
+header .top_menu {
+  width: 50%;
+  float: left;
+}
+header .top_setting {
+  width: 50%;
+  float: right;
+}
+header .logo h1 {
+  margin-top: 10px;
+  float: left;
+  margin-right: 20px;
+}
+header .top_setting ul {
+  padding-top: 10px;
+  float: right;
+}
+
+.user_setting li {
+  background: #3d4553;
+  border-radius: 3px;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  font-size: 12px;
+  padding: 6px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.user_setting li img {
+  float: left;
+  vertical-align: middle;
+  margin-right: 10px;
+  padding-top: 2px;
+}
+.user_setting li:first-child {
+  margin-right: 10px;
+}
+content {
+  display: block;
+  z-index: 1;
+  height: 100vh;
+  width: 100%;
+  left: 0;
+  padding-top: 90px;
+  background: #191d2c;
+  overflow-y: scroll;
+}
+.aside {
+  height: 100vh;
+  width: 350px;
+  left: -350px;
+  background: #191d2c;
+}
+.aside_list {
+  background: #2c303c;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.aside_list dt img {
+  margin-right: 10px;
+}
+.aside_list dt {
+  padding-top: 9px;
+}
+.active {
+  background: #044364 !important;
+}
+.coin_list {
+  margin-top: -3px;
+}
+.coin_list span:last-child {
+  border-radius: 3px;
+  padding: 7px 10px;
+  margin-left: 5px;
+}
+.cont_box {
+  border-radius: 7px;
+  background: #262a38;
+}
+.header_line_wrap {
+  width: 100%;
+  background: #ffdd80;
+  border-radius: 10px;
+  height: 30px;
+}
+.header_line {
+  background: #188ac6;
+  width: 80%;
+  height: 30px;
+  border-radius: 10px 0 0 10px;
+}
+.r_box {
+  border-radius: 20px;
+  background: #3c404c;
+  color: #d0dfe4;
+  padding: 5px 10px;
+  margin-right: 20px;
+}
+.content_wrap {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-bottom: 2rem;
+}
+table {
+  background: #191d2b;
+  border-top: 2px solid #dddddd;
+}
+table th {
+  border-bottom: 2px solid #dddddd;
+  color: white;
+  border-right: 1px solid #232735;
+  padding: 6.5px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+table th:last-child {
+  border-right: none;
+}
+table td {
+  border-right: 1px solid #232735;
+  border-bottom: 1px solid #434760;
+  color: white;
+  padding: 6.5px 0;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+.nav li {
+  cursor: pointer;
+}
+.nav .active1 {
+  color: #188ac6;
+  font-weight: bold !important;
+  border-bottom: 2px solid #188ac6;
+  padding-bottom: 17px;
+}
+.bor_cont {
+  border: 1px solid #232c42;
+  border-top: none;
+  overflow: hidden;
+}
+
+.tabs li {
+  background: #20263c;
+  color: #3e455f;
+  float: left;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+.tabs li:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.tabs li:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.tabs li:last-child {
+  border-radius: 0 5px 5px 0;
+}
+.tabs li.on {
+  background: #3f4a66;
+  color: #a2a8b7;
+}
+
+.tabss li {
+  background: #20263c;
+  color: #3e455f;
+  float: left;
+  padding: 3px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.tabss li:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.tabss li:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.tabss li:last-child {
+  border-radius: 0 5px 5px 0;
+}
+.tabss li.on {
+  background: #3f4a66;
+  color: #a2a8b7;
+}
+
+.sub_nav li:hover,
+.nav li:hover {
+  color: #188ac6;
+}
+@media (max-width: 1200px) {
+  .aside {
+    position: absolute;
+    left: -500px;
+    z-index: 999;
+    display: block;
+    background: #191d2c;
+    width: 250px;
+    padding: 30px;
+  }
+  .user_setting {
+    display: none;
+  }
+  .hamburger {
+    right: 0;
+    position: absolute;
+  }
+}
+
+@media (max-width: 450px) {
+  .hamburger {
+    right: 0;
+    position: absolute;
+  }
+  .user_setting,
+  .nav {
+    display: none;
+  }
+  .aside {
+    position: absolute;
+    left: -500px;
+    z-index: 999;
+    display: block;
+  }
+}

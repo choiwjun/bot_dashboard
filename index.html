@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,127 +8,806 @@
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <link rel="icon" href="images/ico/favicon.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
-    <script src="js/jquery.js"></script>
-    <script src="js/style.js"></script>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.0.2/dist/echarts.min.js"></script>
+    <script src="js/jquery.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/hamburgers.css" />
+    <link rel="stylesheet" href="css/style1.css" />
     <title>Bot_dashboard</title>
 </head>
+
 <body>
     <!-- header -->
-    <header class="bg-191d2c py-2 px-4">
-        <div class="top_menu">
-            <div class="logo">
-                <h1>
-                    <a href="index.html">
-                        <img src="images//ico/logo.png" alt="kdax" />
-                    </a>
-                </h1>
-            </div>
-        </div>
-        <div class="top_setting">
-            <div class="hamburger hamburger--slider float-right">
-                <div class="hamburger-box">
-                    <div class="hamburger-inner"></div>
+    <header class="p-5 shadow-lg">
+        <div class="relative w-full">
+            <div class="absolute left-0">
+                <div class="float-left">
+                    <h1>
+                        <img src="images/ico/nav_logo.svg" alt="" style="width:70%;margin-top:5px;" />
+                    </h1>
+                </div>
+                <div class="nav text-gray-300 font-bold text-2xl float-left ml-10">
+                    <ul>
+                        <li class="float-left cursor-pointer">
+                            <span class="active1 tshaodw">ASTA</span>
+                            <span class="w-2/4 text-sm ml-2 text-white">58.45</span>
+                            <span class="w-2/4 text-xs c4ba08f ml-1">+ 01.34% ▲</span>
+                        </li>
+                        <li class="float-left cursor-pointer ml-20">
+                            <span class="tshaodw">BMP</span>
+                            <span class="w-2/4 text-sm ml-2 text-white">58.45</span>
+                            <span class="w-2/4 text-xs ce24545 ml-1">- 01.34% ▼</span>
+                        </li>
+                        <li class="float-left cursor-pointer ml-20">
+                            <span class="tshaodw">MYCE</span>
+                            <span class="w-2/4 text-sm ml-2 text-white">58.45</span>
+                            <span class="w-2/4 text-xs c4ba08f ml-1">+ 01.34% ▲</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <ul class="user_setting">
-                <li><img src="images/ico/settings.png" alt="" />Settings</li>
-                <li><img src="images/ico/logout.png" alt="" />Logout</li>
-            </ul>
+            <div class="absolute right-0">
+                <ul class="user_setting">
+                    <li class="shadow"><img src="images/ico/settings.png" alt="" />Settings</li>
+                    <li class="shadow"><img src="images/ico/logout.png" alt="" />Logout</li>
+                </ul>
+            </div>
         </div>
     </header>
-    <content class="w-full px-4">
-        <div class="aside float-left">
-            <div>
-                <h2 class="text-white font-bold text-xl">실시간현황</h2>
-                <div class="aside_list mb-2  mt-4 py-2 px-4 active">
-                    <dl class="flex flex-wrap text-white font-bold">
-                        <dt class="w-2/4 mt-2 text-lg"><img src="images/ico/astacoin.png" alt="" class="float-left" /> ASTA</dt>
-                        <dd class="w-2/4 text-right text-2xl">58.45<br /><span class="text-sm c4ba08f">+ 01.34% ▲</span></dd>
-                    </dl>
-                </div>
-                <div class="aside_list mb-2 py-2 px-4">
-                    <dl class="flex flex-wrap text-white font-bold">
-                        <dt class="w-2/4 mt-2 text-lg"><img src="images/ico/bmpcoin.png" alt="" class="float-left" /> BMP</dt>
-                        <dd class="w-2/4 text-right text-2xl">58.45<br /><span class="text-sm ce24545">+ 01.34% ▼</span></dd>
-                    </dl>
-                </div>
-                <div class="aside_list py-2 px-4">
-                    <dl class="flex flex-wrap text-white font-bold">
-                        <dt class="w-2/4 mt-1 text-lg"><img src="images/ico/mycecoin.png" alt="" class="float-left" /> MYCE</dt>
-                        <dd class="w-2/4 text-right text-2xl">58.45<br /><span class="text-sm c4ba08f">+ 01.34% ▲</span></dd>
-                    </dl>
-                </div>
-            </div>
-            <div>
-                <h2 class="text-white font-bold mt-20 text-xl">상장거래소</h2>
-                <div class="text-white mb-1 mt-2 aside_list py-6 px-4 active">
-                    <span class="w-1/4 text-base">코인원</span>
-                    <div class="float-right coin_list">
-                        <span class="w-1/4 text-xl">58.45</span>
-                        <span class="w-2/4 c4ba08f text-sm  shadow">+ 01.34% ▲</span>
-                    </div>
-                </div>
-                <div class="text-white mb-1 aside_list py-6 px-4">
-                    <span class="w-1/4 text-base">캐셔리스트</span>
-                    <div class="float-right coin_list">
-                        <span class="w-1/4 text-xl">58.45</span>
-                        <span class="w-2/4 ce24545 text-sm  shadow">+ 01.34% ▼</span>
-                    </div>
-                </div>
-                <div class="text-white aside_list py-6 px-4">
-                    <span class="w-1/4 text-base">비트소닉</span>
-                    <div class="float-right coin_list">
-                        <span class="w-1/4 text-xl">58.45</span>
-                        <span class="w-2/4 c4ba08f text-sm  shadow">+ 01.34% ▲</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="content_wrap w-full ml-0 xl:ml-6 lg:ml-6 md:ml-0 sm:ml-0">
-            <div class="cont_box w-full">
-                <h3 class="text-white font-bold text-lg c34384b p-4 tshaodw">총 자산</h3>
-                <div class="text-white w-full flex px-4">
-                    <div class="font-bold w-1/3 text-2xl mt-5 tshaodw">
-                        5,240,000,000 원<br /><span class="c4ba08f text-sm">261.34 (+ 0.32%)</span>
-                    </div>
-                    <div class="w-2/3 p-4 b42455e">
-                        <div class="header_line_wrap">
-                            <div class="header_line text-center font-black pt-1 tshaodw">80%</div>
+    <content class="w-full px-5">
+        <div class="w-full flex flex-wrap">
+            <div class="w-1/6 pr-14">
+                <div class="">
+                    <h2 class="text-base font-bold text-white tshaodw">상장 거래소</h2>
+                    <div class="w-full dropdownmenu dropdownmenu1 mt-3">
+                        <div class="text-white p-3 cont_box shadow active dropheader">
+                            <span class="w-1/4 text-sm font-bold">코인원</span><br />
+                            
+                            <div class="float-right -mt-5 cursor-pointer">
+                                58.45<span class="w-2/4 text-xs c4ba08f ml-2 mr-3">+ 01.34% ▲</span>
+                                <i class="fas fa-angle-double-right"></i>
+                            </div>
                         </div>
-                        <div class="flex float-right mt-4">
-                            <div class="r_box tshaodw"><span class="c188ac6">● </span>보유원화 <span class="ml-20 text-white font-bold">18,769 만</span></div>
-                            <div class="r_box tshaodw"><span class="cffdd80">● </span>가상자산 <span class="ml-20 text-white font-bold">18,769 만</span></div>
-                            <div class="text-lg font-bold">214,940.93989 <span class="cafafaf">ASTA</span></div>
+                        <div class="text-white w-full px-4 bor_cont">
+                            <div class="my-3 overflow-hidden w-full">
+                                <div class="w-full flex flex-wrap">
+                                    <div class="w-1/3">
+                                        <div id="main33" style="height:120px;width:100%">
+                                            <script type="text/javascript">
+                                                // based on prepared DOM, initialize echarts instance
+                                                var myChart_top33 = echarts.init(document.getElementById('main33'));
+
+                                                // specify chart configuration item and data
+                                                var option = {
+                                                    grid: {
+                                                        left: '0px'
+                                                    },
+                                                    title: {
+                                                        show: false,
+                                                        text: '코인원 자산현황',
+                                                        left: 'center',
+                                                        textStyle: {
+                                                            color: '#fff',
+                                                            fontSize: 25
+                                                        }
+                                                    },
+                                                    tooltip: {
+                                                        trigger: 'item'
+                                                    },
+                                                    legend: {
+                                                        show: false,
+                                                        left: 'center',
+                                                        textStyle: {
+                                                            color: '#fff',
+                                                            fontSize: 14
+                                                        },
+                                                        bottom: '0',
+                                                        icon: 'circle',
+                                                        itemgap: 10,
+                                                    },
+                                                    series: [
+                                                        {
+                                                            type: 'pie',
+                                                            center: ['40%', '55%'],
+                                                            avoidLabelOverlap: false,
+                                                            color: ['#ffdd80', '#188ac6',],
+                                                            data: [
+                                                                { value: 30, name: '가상자산' },
+                                                                { value: 70, name: '보유원화' },
+                                                            ],
+
+                                                            label: {
+                                                                position: 'outer',
+                                                                alignTo: 'none',
+                                                                bleedMargin: 5,
+                                                                color: '#fff',
+                                                                show: false,
+                                                            },
+                                                            labelLine: {
+                                                                show: false
+                                                            },
+                                                            itemStyle: {
+                                                                normal: {
+                                                                    // Set the fan shadow
+                                                                    shadowBlur: 5,
+                                                                    shadowColor: 'rgba(0,0,0,0.5)',
+                                                                    shadowOffsetX: 0,
+                                                                    shadowOffsetY: 3
+
+                                                                }
+                                                            },
+
+                                                        }
+                                                    ]
+                                                };
+
+                                                // use configuration item and data specified to show chart
+                                                myChart_top33.setOption(option);
+
+                                                window.addEventListener('resize', function () {
+                                                    myChart_top33.resize();
+                                                })
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div class="w-2/3">
+                                        <ul class="">
+                                            <li class="clear-both">
+                                                <span class="text-xs text-left mr-5 font-bold text-gray-400">
+                                                    <span class="c228cc3 mr-2 ">●</span>보유원화
+                                                </span>
+                                                <span class="text-sm font-bold float-right">2,352,125
+                                                    <span class="font-normal text-gray-300">원</span></span>
+                                            </li>
+                                            <li class="mt-3 mb-3 overflow-hidden clear-both">
+                                                <span class="text-xs text-left mr-5 font-bold text-gray-400">
+                                                    <span class="cffdd80  mr-2">●</span>가상자산
+                                                </span>
+                                                <span class="text-sm font-bold float-right">2,352,125
+                                                    <span class="font-normal text-gray-300">원</span></span>
+                                                <br />
+                                                <span class="text-sm text-gray-400 float-right clear-both">(223,760.99999 ASTA)</span>
+                                            </li>
+                                            <li class="clear-both pt-3" style="border-top:1px solid #232c42">
+                                                <span class="text-base text-left mr-5 font-bold text-gray-400">
+                                                    총자산
+                                                </span>
+                                                <span class="text-sm font-bold float-right">18,769
+                                                    <span class="font-normal text-gray-300">만</span>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--
+                                <div class="clear-both float-left pt-2 mt-2 w-full" style="border-top:1px solid #232c42">
+                                    <ul>
+                                        <li class="clear-both">
+                                            <span class="text-lg text-left mr-5 font-bold text-gray-300">
+                                                총자산
+                                            </span>
+                                            <span class="text-base font-bold float-right">18,769
+                                                <span class="font-normal text-gray-300">만</span>
+                                                <span class="w-2/4 text-xs c4ba08f ml-2">+ 01.34% ▲</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full dropdownmenu">
+                        <div class="text-white p-3 cont_box shadow active dropheader">
+                            <span class="w-1/4 text-sm font-bold">캐셔레스트</span><br />
+                            <div class="float-right -mt-5 cursor-pointer">
+                                58.45<span class="w-2/4 text-xs ce24545 ml-2 mr-3">+ 01.34% ▼</span>
+                                <i class="fas fa-angle-double-right"></i>
+                            </div>
+                        </div>
+                        <div class="text-white w-full px-4 bor_cont">
+                            <div class="my-3 overflow-hidden w-full">
+                                <div class="w-full flex flex-wrap">
+                                    <div class="w-1/3">
+                                        <div id="main44" style="height:120px;width:100%">
+                                            <script type="text/javascript">
+                                                // based on prepared DOM, initialize echarts instance
+                                                var myChart_top44 = echarts.init(document.getElementById('main44'));
+
+                                                // specify chart configuration item and data
+                                                var option = {
+                                                    grid: {
+                                                        left: '0px'
+                                                    },
+                                                    title: {
+                                                        show: false,
+                                                        text: '코인원 자산현황',
+                                                        left: 'center',
+                                                        textStyle: {
+                                                            color: '#fff',
+                                                            fontSize: 25
+                                                        }
+                                                    },
+                                                    tooltip: {
+                                                        trigger: 'item'
+                                                    },
+                                                    legend: {
+                                                        show: false,
+                                                        left: 'center',
+                                                        textStyle: {
+                                                            color: '#fff',
+                                                            fontSize: 14
+                                                        },
+                                                        bottom: '0',
+                                                        icon: 'circle',
+                                                        itemgap: 10,
+                                                    },
+                                                    series: [
+                                                        {
+                                                            type: 'pie',
+                                                            center: ['40%', '55%'],
+                                                            avoidLabelOverlap: false,
+                                                            color: ['#ffdd80', '#188ac6',],
+                                                            data: [
+                                                                { value: 80, name: '가상자산' },
+                                                                { value: 20, name: '보유원화' },
+                                                            ],
+
+                                                            label: {
+                                                                position: 'outer',
+                                                                alignTo: 'none',
+                                                                bleedMargin: 5,
+                                                                color: '#fff',
+                                                                show: false,
+                                                            },
+                                                            labelLine: {
+                                                                show: false
+                                                            },
+                                                            itemStyle: {
+                                                                normal: {
+                                                                    // Set the fan shadow
+                                                                    shadowBlur: 5,
+                                                                    shadowColor: 'rgba(0,0,0,0.5)',
+                                                                    shadowOffsetX: 0,
+                                                                    shadowOffsetY: 3
+
+                                                                }
+                                                            },
+
+                                                        }
+                                                    ]
+                                                };
+
+                                                // use configuration item and data specified to show chart
+                                                myChart_top44.setOption(option);
+
+                                                window.addEventListener('resize', function () {
+                                                    myChart_top44.resize();
+                                                })
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div class="w-2/3">
+                                        <ul class="">
+                                            <li class="clear-both">
+                                                <span class="text-xs text-left mr-5 font-bold text-gray-400">
+                                                    <span class="c228cc3 mr-2 ">●</span>보유원화
+                                                </span>
+                                                <span class="text-sm font-bold float-right">2,352,125
+                                                    <span class="font-normal text-gray-300">원</span></span>
+                                            </li>
+                                            <li class="mt-3 mb-3 overflow-hidden clear-both">
+                                                <span class="text-xs text-left mr-5 font-bold text-gray-400">
+                                                    <span class="cffdd80  mr-2">●</span>가상자산
+                                                </span>
+                                                <span class="text-sm font-bold float-right">2,352,125
+                                                    <span class="font-normal text-gray-300">원</span></span>
+                                                <br />
+                                                <span class="text-sm text-gray-400 float-right clear-both">(223,760.99999 ASTA)</span>
+                                            </li>
+                                            <li class="clear-both pt-3" style="border-top:1px solid #232c42">
+                                                <span class="text-base text-left mr-5 font-bold text-gray-400">
+                                                    총자산
+                                                </span>
+                                                <span class="text-sm font-bold float-right">18,769
+                                                    <span class="font-normal text-gray-300">만</span>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--
+                                <div class="clear-both float-left pt-2 mt-2 w-full" style="border-top:1px solid #232c42">
+                                    <ul>
+                                        <li class="clear-both">
+                                            <span class="text-lg text-left mr-5 font-bold text-gray-300">
+                                                총자산
+                                            </span>
+                                            <span class="text-base font-bold float-right">18,769
+                                                <span class="font-normal text-gray-300">만</span>
+                                                <span class="w-2/4 text-xs c4ba08f ml-2">+ 01.34% ▲</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                 -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full dropdownmenu">
+                        <div class="text-white p-3 cont_box shadow active dropheader">
+                            <span class="w-1/4 text-sm font-bold">비트소닉</span><br />
+                            <div class="float-right -mt-5 cursor-pointer">
+                                58.45<span class="w-2/4 text-xs c4ba08f ml-2 mr-3">+ 01.34% ▲</span>
+                                <i class="fas fa-angle-double-right"></i>
+                            </div>
+                        </div>
+                        <div class="text-white w-full px-4 bor_cont">
+                            <div class="my-2 overflow-hidden w-full">
+                                <div class="w-full flex flex-wrap">
+                                    <div class="w-1/3">
+                                        <div id="main55" style="height:120px;width:100%">
+                                            <script type="text/javascript">
+                                                // based on prepared DOM, initialize echarts instance
+                                                var myChart_top55 = echarts.init(document.getElementById('main55'));
+
+                                                // specify chart configuration item and data
+                                                var option = {
+                                                    grid: {
+                                                        left: '0px',
+                                                    },
+                                                    title: {
+                                                        show: false,
+                                                        text: '코인원 자산현황',
+                                                        left: 'center',
+                                                        textStyle: {
+                                                            color: '#fff',
+                                                            fontSize: 25
+                                                        }
+                                                    },
+                                                    tooltip: {
+                                                        trigger: 'item'
+                                                    },
+                                                    legend: {
+                                                        show: false,
+                                                        left: 'center',
+                                                        textStyle: {
+                                                            color: '#fff',
+                                                            fontSize: 14
+                                                        },
+                                                        bottom: '0',
+                                                        icon: 'circle',
+                                                        itemgap: 10,
+                                                    },
+                                                    series: [
+                                                        {
+                                                            type: 'pie',
+                                                            center: ['40%', '55%'],
+                                                            avoidLabelOverlap: false,
+                                                            color: ['#ffdd80', '#188ac6',],
+                                                            data: [
+                                                                { value: 70, name: '가상자산' },
+                                                                { value: 30, name: '보유원화' },
+                                                            ],
+
+                                                            label: {
+                                                                position: 'outer',
+                                                                alignTo: 'none',
+                                                                bleedMargin: 5,
+                                                                color: '#fff',
+                                                                show: false,
+                                                            },
+                                                            labelLine: {
+                                                                show: false
+                                                            },
+                                                            itemStyle: {
+                                                                normal: {
+                                                                    // Set the fan shadow
+                                                                    shadowBlur: 5,
+                                                                    shadowColor: 'rgba(0,0,0,0.5)',
+                                                                    shadowOffsetX: 0,
+                                                                    shadowOffsetY: 3
+
+                                                                }
+                                                            },
+
+                                                        }
+                                                    ]
+                                                };
+
+                                                // use configuration item and data specified to show chart
+                                                myChart_top55.setOption(option);
+
+                                                window.addEventListener('resize', function () {
+                                                    myChart_top55.resize();
+                                                })
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div class="w-2/3">
+                                        <ul class="">
+                                            <li class="clear-both">
+                                                <span class="text-xs text-left mr-5 font-bold text-gray-400">
+                                                    <span class="c228cc3 mr-2 ">●</span>보유원화
+                                                </span>
+                                                <span class="text-sm font-bold float-right">2,352,125
+                                                    <span class="font-normal text-gray-300">원</span></span>
+                                            </li>
+                                            <li class="mt-3 mb-3 overflow-hidden clear-both">
+                                                <span class="text-xs text-left mr-5 font-bold text-gray-400">
+                                                    <span class="cffdd80  mr-2">●</span>가상자산
+                                                </span>
+                                                <span class="text-sm font-bold float-right">2,352,125
+                                                    <span class="font-normal text-gray-300">원</span></span>
+                                                <br />
+                                                <span class="text-sm text-gray-400 float-right clear-both">(223,760.99999 ASTA)</span>
+                                            </li>
+                                            <li class="clear-both pt-3" style="border-top:1px solid #232c42">
+                                                <span class="text-base text-left mr-5 font-bold text-gray-400">
+                                                    총자산
+                                                </span>
+                                                <span class="text-sm font-bold float-right">18,769
+                                                    <span class="font-normal text-gray-300">만</span>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--
+                                <div class="clear-both float-left pt-2 mt-2 w-full" style="border-top:1px solid #232c42">
+                                    <ul>
+                                        <li class="clear-both">
+                                            <span class="text-lg text-left mr-5 font-bold text-gray-300">
+                                                총자산
+                                            </span>
+                                            <span class="text-base font-bold float-right">18,769
+                                                <span class="font-normal text-gray-300">만</span>
+                                                <span class="w-2/4 text-xs c4ba08f ml-2">+ 01.34% ▲</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                -->
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!--
+                <h2 class="text-base font-bold text-white tshaodw8 mt-14">실시간 현황</h2>
+                <div>
+                    <div class="text-white mb-1 mt-2 aside_list p-3 active">
+                        <span class="w-1/4 text-sm">ASTA</span>
+                        <div class="float-right coin_list">
+                            <span class="w-1/4 text-xs">58.45</span>
+                            <span class="w-2/4 c4ba08f text-xs  shadow">+ 01.34% ▲</span>
+                        </div>
+                    </div>
+                    <div class="text-white mb-1 mt-1 aside_list p-3">
+                        <span class="w-1/4 text-sm">BMP</span>
+                        <div class="float-right coin_list">
+                            <span class="w-1/4 text-xs">58.45</span>
+                            <span class="w-2/4 ce24545 text-xs  shadow">+ 01.34% ▼</span>
+                        </div>
+                    </div>
+                    <div class="text-white mb-1 mt-1 aside_list p-3">
+                        <span class="w-1/4 text-sm">MYCE</span>
+                        <div class="float-right coin_list">
+                            <span class="w-1/4 text-xs">58.45</span>
+                            <span class="w-2/4 c4ba08f text-xs  shadow">+ 01.34% ▲</span>
+                        </div>
+                    </div>
+                </div>
+                -->
             </div>
 
-            <div class="w-full flex flex-wrap">
-                <div class="w-full pr-0 xl:pr-2 lg:pr-2 md:pr-0 sm:pr-0 mt-3 xl:w-1/2 lg:w-full md:w-full sm:w-full">
-                    <div class="cont_box flex flex-wrap items-center px-5 py-6 shadow-sm rounded-md bg-2c315b">
+            <div class="w-4/6 relative">
+                <div class="flex flex-wrap w-full">
+                    <h1 class="clear-both text-white text-5xl font-bold tshaodw">
+                        <img src="images/ico/astacoin.png" alt="" style="float:left;margin-right:10px;padding-top:7px"/>ASTA
+                    </h1>
+                    <div class="w-full">
+                        <dl class="mt-2 text-gray-400 text-sm">
+                            <dt class="float-left mr-2">고가</dt>
+                            <dd class="float-left mr-10 text-bold ce24545">49.68</dd>
+                            <dt class="float-left mr-2">저가</dt>
+                            <dd class="float-left mr-10 text-bold c0a9ce8">19.91</dd>
+                            <dt class="float-left mr-2">거래량</dt>
+                            <dd class="float-left text-bold text-white">567,300.870</dd>
+                        </dl>
+                    </div>
+                    <div class="absolute right-0">
+                        <ul class="tabs">
+                            <li class="on">일간</li>
+                            <li>주간</li>
+                            <li>월간</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="main" class="w-full" style="height:450px;width:110%">
+                    <script type="text/javascript">
+                        // based on prepared DOM, initialize echarts instance
+                        var myChart = echarts.init(document.getElementById('main'));
+                        function randomData() {
+                            now = new Date(+now + oneDay);
+                            value = value + Math.random() * 21 - 10;
+                            return {
+                                name: now.toString(),
+                                value: [
+                                    [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
+                                    Math.round(value)
+                                ]
+                            };
+                        }
+
+                        var data = [];
+                        var now = +new Date(2021, 3, 5);
+                        var oneDay = 24 * 3600 * 1000;
+                        var value = Math.random() * 1000;
+                        for (var i = 0; i < 1000; i++) {
+                            data.push(randomData());
+                        }
+
+                        option = {
+                            grid: {
+                                left:40,
+                                top: 50,
+                            },
+                            tooltip: {
+                                trigger: 'axis',
+                                formatter: function (params) {
+                                    params = params[0];
+                                    var date = new Date(params.name);
+                                    return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+                                },
+                                axisPointer: {
+                                    animation: false
+                                }
+                            },
+                            xAxis: {
+                                type: 'time',
+                                splitLine: {
+                                    show: false
+                                }
+                            },
+                            yAxis: {
+                                type: 'value',
+                                boundaryGap: [0, '100%'],
+                                splitLine: {
+                                    lineStyle: {
+                                        color: '#3c3d49',
+                                        shadowColor: 'rgba(255, 255, 255, 1)',
+                                    }
+                                }
+                            },
+                            color: ['#188ac6'],
+                            series: [{
+                                type: 'line',
+                                showSymbol: false,
+                                hoverAnimation: false,
+                                data: data,
+                            }]
+                        };
+
+                        setInterval(function () {
+
+                            for (var i = 0; i < 5; i++) {
+                                data.shift();
+                                data.push(randomData());
+                            }
+
+                            myChart.setOption({
+                                series: [{
+                                    data: data
+                                }]
+                            });
+                        }, 1000);
+
+                        // use configuration item and data specified to show chart
+                        myChart.setOption(option);
+
+                        window.addEventListener('resize', function () {
+                            myChart.resize();
+                        })
+                    </script>
+                </div>
+                <div id="main3" style="height:80px;width:110%">
+                    <script type="text/javascript">
+                        // based on prepared DOM, initialize echarts instance
+                        var myChart_top3 = echarts.init(document.getElementById('main3'));
+                        var base = +new Date(1988, 9, 3);
+                        var oneDay = 24 * 3600 * 1000;
+
+                        var data = [[base, Math.random() * 300]];
+
+                        for (var i = 1; i < 20000; i++) {
+                            var now = new Date(base += oneDay);
+                            data.push([
+                                [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
+                                Math.round((Math.random() - 0.5) * 20 + data[i - 1][1])
+                            ]);
+                        }
+
+                        // specify chart configuration item and data
+                        var option = {
+                            grid: {
+                                left: 40,
+                                top: 50,
+                            },
+                            xAxis: {
+                                type: 'time',
+                                boundaryGap: false,
+                                show: false
+                            },
+                            yAxis: {
+                                type: 'value',
+                                boundaryGap: [0, '100%'],
+                                show: false
+                            },
+                            color: ['#ffdd80', '#f8d77e'],
+                            series: [
+                                {
+                                    name: '模拟数据',
+                                    type: 'line',
+                                    smooth: true,
+                                    symbol: 'none',
+                                    areaStyle: {},
+                                    data: data
+                                }
+                            ]
+                        };
+
+                        // use configuration item and data specified to show chart
+                        myChart_top3.setOption(option);
+
+                        window.addEventListener('resize', function () {
+                            myChart_top3.resize();
+                        })
+                    </script>
+                </div>
+            </div>
+            
+            <div class="w-1/6 pl-14">
+                <div class="p-4 cont_box w-full">
+                    <div class="relative flex flex-wrap items-center shadow-sm rounded-md bg-2c315b">
+                        <div class="text-white w-full">
+                            <h2 class="text-base font-bold tshaodw">
+                                총 자산현황
+                            </h2>
+                        </div>
+                        <div class="w-full flex flex-wrap">
+                            <div class="w-1/3">
+                                <div id="main4" style="height:150px;width:100%">
+                                    <script type="text/javascript">
+                                        // based on prepared DOM, initialize echarts instance
+                                        var myChart_top4 = echarts.init(document.getElementById('main4'));
+
+                                        // specify chart configuration item and data
+                                        var option = {
+                                             grid: {
+                                                left: '0px'
+                                            },
+                                            title: {
+                                                show: false,
+                                                text: '코인원 자산현황',
+                                                left: 'center',
+                                                textStyle: {
+                                                    color: '#fff',
+                                                    fontSize: 25
+                                                }
+                                            },
+                                            tooltip: {
+                                                trigger: 'item'
+                                            },
+                                            legend: {
+                                                show: false,
+                                                left: 'center',
+                                                textStyle: {
+                                                    color: '#fff',
+                                                    fontSize: 14
+                                                },
+                                                bottom: '0',
+                                                icon: 'circle',
+                                                itemgap: 10,
+                                            },
+                                            series: [
+                                                {
+                                                    type: 'pie',
+                                                    center: ['40%', '50%'],
+                                                    avoidLabelOverlap: false,
+                                                    color: ['#ffdd80', '#188ac6',],
+                                                    data: [
+                                                        { value: 30, name: '가상자산' },
+                                                        { value: 70, name: '보유원화' },
+                                                    ],
+                                                    
+                                                    label: {
+                                                        position: 'outer',
+                                                        alignTo: 'none',
+                                                        bleedMargin: 5,
+                                                        color: '#fff',
+                                                        show: false,
+                                                    },
+                                                    labelLine: {
+                                                        show: false
+                                                    },
+                                                    itemStyle: {
+                                                        normal: {
+                                                            // Set the fan shadow
+                                                            shadowBlur: 5,
+                                                            shadowColor: 'rgba(0,0,0,0.5)',
+                                                            shadowOffsetX: 0,
+                                                            shadowOffsetY: 3
+
+                                                        }
+                                                    },
+
+                                                }
+                                            ]
+                                        };
+
+                                        // use configuration item and data specified to show chart
+                                        myChart_top4.setOption(option);
+
+                                        window.addEventListener('resize', function () {
+                                            myChart_top4.resize();
+                                        })
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="w-2/3">
+                                <div class="text-white w-full">
+                                    <div class="">
+                                        <ul>
+                                            <li class="mt-5 clear-both">
+                                                <span class="text-xs text-left mr-5 font-bold text-gray-300">
+                                                    <span class="c228cc3 mr-2">●</span>보유원화
+                                                </span>
+                                                <span class="text-sm font-bold float-right">2,352,125
+                                                    <span class="font-normal text-gray-300">원</span></span>
+                                            </li>
+                                            <li class="mt-3 mb-3 clear-both overflow-hidden">
+                                                <span class="text-xs text-left mr-5 font-bold text-gray-300">
+                                                    <span class="cffdd80  mr-2">●</span>가상자산
+                                                </span>
+                                                <span class="text-sm font-bold float-right">2,352,125
+                                                    <span class="font-normal text-gray-300">원</span></span>
+                                                <br />
+                                                <span class="text-sm text-gray-400 float-right">(223,760.99999 ASTA)</span>
+                                            </li>
+                                            <li class="clear-both pt-5" style="border-top:1px solid rgb(102, 102, 102)">
+                                                <span class="text-xl text-left mr-5 font-bold text-white">
+                                                    총자산
+                                                </span>
+                                                <span class="text-base font-bold float-right">18,769 만</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="w-full mt-3">
+                    <div class="w-full cont_box flex flex-wrap items-center px-5 py-4 shadow-sm rounded-md bg-2c315b">
                         <div class="flex flex-wrap w-full relative">
                             <div>
-                                <h2 class="text-lg font-bold text-white tshaodw">
+                                <h2 class="text-base font-bold text-white tshaodw">
                                     자산규모 변동 추이
                                 </h2>
                             </div>
                             <div class="absolute right-0">
-                                <select
-                                    class="h-full rounded-r border-t sm:rounded-r-none sm:border-r-0 border-r border-b block w-full bg-white border-gray-400 
-                                                text-gray-700 py-1 px-2 pr-2 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500">
-                                    <option>일간</option>
-                                </select>
+                                <ul class="tabss">
+                                    <li class="on">일간</li>
+                                    <li>주간</li>
+                                    <li>월간</li>
+                                </ul>
                             </div>
                         </div>
-                        <div id="main1" style="height:332px;width:100vw">
+                        <div id="main1" style="height:330px;width:100%">
                             <script type="text/javascript">
                                 // based on prepared DOM, initialize echarts instance
                                 var myChart_top1 = echarts.init(document.getElementById('main1'));
@@ -147,7 +827,7 @@
                                     xAxis: {
                                         type: 'category',
                                         data: ['01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00'],
-                                       
+
                                     },
                                     yAxis: {
                                         type: 'value',
@@ -155,15 +835,19 @@
                                             lineStyle: {
                                                 color: '#3c3d49',
                                                 shadowColor: 'rgba(255, 255, 255, 1)',
-                                                
+
                                             }
                                         }
                                     },
                                     color: ['#be168a', '#188ac6', '#f8d77e'],
-
+                                    grid: {
+                                        top:30,
+                                        left:40,
+                                        bottom:70
+                                    },
                                     series: [
                                         {
-                                            data: [3150, 2230, 1124, 3118, 2315, 3147, 2260],
+                                            data: [1150, 1230, 124, 1118, 1315, 1147, 1560],
                                             type: 'line',
                                             lineStyle: { color: '#be168a' },
                                             showSymbol: false,
@@ -172,7 +856,7 @@
                                             shadowBlur: 10
                                         },
                                         {
-                                            data: [150, 230, 224, 218, 135, 147, 260],
+                                            data: [1250, 1230, 224, 118, 1135, 1147, 2260],
                                             type: 'line',
                                             lineStyle: { color: '#188ac6' },
                                             showSymbol: false,
@@ -181,7 +865,7 @@
                                             shadowBlur: 10
                                         },
                                         {
-                                            data: [1150, 1230, 2124, 2118, 1315, 1147, 1260],
+                                            data: [50, 1230, 1124, 2118, 1315, 1147, 2660],
                                             type: 'line',
                                             lineStyle: { color: '#f8d77e' },
                                             showSymbol: false,
@@ -202,789 +886,324 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full pl-0 xl:pl-2 lg:pl-2 md:pl-0 sm:pl-0 mt-3 xl:w-1/2 lg:w-full md:w-full sm:w-full">
-                    <div class="cont_box flex flex-wrap items-center px-5 py-6 shadow-sm rounded-md bg-2c315b">
-                        <div class="flex flex-wrap w-full relative">
-                            <div>
-                                <h2 class="text-lg font-bold text-white tshaodw">
-                                    가격변동 변동 추이
-                                </h2>
-                            </div>
-                            <div class="absolute right-0">
-                                <select
-                                    class="h-full rounded-r border-t sm:rounded-r-none sm:border-r-0 border-r border-b block w-full bg-white border-gray-400 
-                                                text-gray-700 py-1 px-2 pr-2 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500">
-                                    <option>일간</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="w-full">
-                            <dl class="mt-2 text-gray-400 text-sm">
-                                <dt class="float-left mr-2">고가</dt>
-                                <dd class="float-left mr-10 text-bold ce24545">49.68</dd>
-                                <dt class="float-left mr-2">저가</dt>
-                                <dd class="float-left mr-10 text-bold c0a9ce8">19.91</dd>
-                                <dt class="float-left mr-2">거래량</dt>
-                                <dd class="float-left text-bold text-white">567,300.870</dd>
-                            </dl>
-                        </div>
-                        <div id="main2" style="height:250px;width:100vw;">
-                            <script type="text/javascript">
-                                // based on prepared DOM, initialize echarts instance
-                                var myChart_top2 = echarts.init(document.getElementById('main2'));
-
-                                // specify chart configuration item and data
-                                var option = {
-                                    legend: {
-                                        show: true,
-                                        left: 'center',
-                                        textStyle: {
-                                            color: '#c3c4c5',
-                                            fontSize: 12
-                                        },
-                                        bottom: '0',
-                                        icon: 'circle',
-                                    },
-                                    xAxis: [
-                                        {
-                                            type: 'category',
-                                            data: ['01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00'],
-                                        }
-                                    ],
-                                    yAxis: [
-                                        {
-                                            type: 'value',
-                                            splitLine: {
-                                                lineStyle: {
-                                                    color: '#3c3d49',
-                                                    shadowColor: 'rgba(255, 255, 255, 1)',
-                                                }
-                                            }
-                                        }
-                                    ],
-                                    color: ['#f5b403'],
-                                    series: [
-                                        {
-                                            data: [35, 28, 45, 40, 45, 30, 50],
-                                            type: 'line',
-                                            lineStyle: { color: '#f5b403' },
-                                            showSymbol: false,
-                                        },
-                                        
-                                    ]
-                                };
-
-                                // use configuration item and data specified to show chart
-                                myChart_top2.setOption(option);
-
-                                window.addEventListener('resize', function () {
-                                    myChart_top2.resize();
-                                })
-                            </script>
-                        </div>
-                        <div id="main3" style="height:54px;width:100vw;margin-top:0px;">
-                            <script type="text/javascript">
-                                // based on prepared DOM, initialize echarts instance
-                                var myChart_top3 = echarts.init(document.getElementById('main3'));
-                                var base = +new Date(1988, 9, 3);
-                                var oneDay = 24 * 3600 * 1000;
-
-                                var data = [[base, Math.random() * 300]];
-
-                                for (var i = 1; i < 20000; i++) {
-                                    var now = new Date(base += oneDay);
-                                    data.push([
-                                        [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
-                                        Math.round((Math.random() - 0.5) * 20 + data[i - 1][1])
-                                    ]);
-                                }
-
-                                // specify chart configuration item and data
-                                var option = {
-                                    grid:{
-                                        show:false,
-                                    },
-                                    tooltip: {
-
-                                    },
-                                    title: {
-                                    },
-                                    toolbox: {
-                                        feature: {
-                                        }
-                                    },
-                                    xAxis: {
-                                        type: 'time',
-                                        boundaryGap: false,
-                                        show: false
-                                    },
-                                    yAxis: {
-                                        type: 'value',
-                                        boundaryGap: [0, '100%'],
-                                        show: false
-                                    },
-                                    color: ['#188ac6','#f8d77e'],
-                                    series: [
-                                        {
-                                            name: '模拟数据',
-                                            type: 'line',
-                                            smooth: true,
-                                            symbol: 'none',
-                                            areaStyle: {},
-                                            data: data
-                                        }
-                                    ]
-                                };
-
-                                // use configuration item and data specified to show chart
-                                myChart_top3.setOption(option);
-
-                                window.addEventListener('resize', function () {
-                                    myChart_top3.resize();
-                                })
-                            </script>
-                        </div>
-                    </div>
-                </div>
             </div>
-
-            
-            <div class="w-full flex flex-wrap">
-                <div class="w-full pr-0 xl:pr-2 lg:pr-2 md:pr-0 sm:pr-0 mt-3 xl:w-1/2 mt-3 xl:w-1/3 lg:w-full md:w-full sm:w-full">
-                    <div class="relative cont_box flex flex-wrap items-center px-5 py-6 shadow-sm rounded-md bg-2c315b">
-                        <div class="text-white w-full">
-                            <h2 class="text-lg font-bold tshaodw">
-                                코인원 자산현황 
-                                <span class="float-right text-sm text-gray-400">보유비율 <span class="text-white">51%</span></span>
-                            </h2>
-                        </div>
-                        <div class="text-white text-center absolute top-2/4 left-2/4" style="z-index:2;transform: translate(-50%, -100%);">
-                            <p class="font-bold text-sm">총자산</p>
-                            <p class="mt-2 text-2xl"><b>18,769</b> 만</p>
-                            <p class="c4ba08f text-xs"><b>261.34 (+ 0.32%)</b></p>
-                        </div>
-                        <div id="main4" style="height:300px;width:100vw;">
-                           <script type="text/javascript">
-                                // based on prepared DOM, initialize echarts instance
-                                var myChart_top4 = echarts.init(document.getElementById('main4'));
-
-                                // specify chart configuration item and data
-                                var option = {
-                                    title: {
-                                        show: false,
-                                        text: '코인원 자산현황',
-                                        left: 'center',
-                                        textStyle: {
-                                            color: '#fff',
-                                            fontSize: 25
-                                        }
-                                    },
-                                    tooltip: {
-                                        trigger: 'item'
-                                    },
-                                    legend: {
-                                        show:false,
-                                        left: 'center',
-                                        textStyle: {
-                                            color: '#fff',
-                                            fontSize: 14
-                                        },
-                                        bottom: '0',
-                                        icon: 'circle',
-                                        itemgap: 10,
-                                        
-                                    },
-                                    
-                                    series: [
-                                        {
-                                            type: 'pie',
-                                            radius: ['50%', '70%'],
-                                            avoidLabelOverlap: false,
-                                            color:['#ffdd80','#188ac6',],
-                                            data: [
-                                                { value: 30, name: '보유원화' },
-                                                { value: 30, name: '가상자산' },
-                                            ],
-                                            label: {
-                                                position: 'outer',
-                                                alignTo: 'none',
-                                                bleedMargin: 5,
-                                                color: '#fff',
-                                                show: false,
-                                            },
-                                            labelLine: {
-                                                show: false
-                                            },
-                                            itemStyle: {
-                                                normal: {
-                                                    // Set the fan shadow
-                                                    shadowBlur: 5,
-                                                    shadowColor: 'rgba(0,0,0,0.3)',
-                                                    shadowOffsetX: 0,
-                                                    shadowOffsetY: 3
-
-                                                }
-                                            },
-
-                                        }
-                                    ]
-                                };
-
-                                // use configuration item and data specified to show chart
-                                myChart_top4.setOption(option);
-
-                                window.addEventListener('resize', function () {
-                                    myChart_top4.resize();
-                                })
-                            </script>
-                        </div>
-                        
-                        <div class="text-white w-full">
-                            <div class="mt-5">
-                                <ul>
-                                    <li class="mt-3 clear-both">
-                                        <span class="text-base text-left mr-5 font-bold text-gray-300">
-                                            <span class="c228cc3 mr-2">●</span>보유원화
-                                        </span>
-                                        <span class="text-base font-bold float-right">2,352,125 
-                                            <span class="font-normal text-gray-300">원</span></span>
-                                    </li>
-                                    <li class="mt-3 clear-both">
-                                        <span class="text-base text-left mr-5 font-bold text-gray-300">
-                                            <span class="cffdd80  mr-2">●</span>가상자산
-                                        </span>
-                                        <span class="text-base font-bold float-right">2,352,125 
-                                            <span class="font-normal text-gray-300">원</span></span>
-                                        <br />
-                                        <span class="text-sm text-gray-400 float-right">(223,760.99999 ASTA)</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        
+        </div>
+        <div class="w-full flex flex-wrap cont_box mt-2">
+            <div class="w-full p-4">
+                <div class="flex flex-wrap w-full relative">
+                    <div>
+                        <h2 class="text-xl font-bold text-white tshaodw">
+                            자산변동 상세내역
+                        </h2>
+                    </div>
+                    <div class="absolute right-0">
+                        <select
+                            class="h-full rounded-r border-t sm:rounded-r-none sm:border-r-0 border-r border-b block w-full bg-white border-gray-400 
+                                                            text-gray-700 py-1 px-2 pr-2 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500">
+                            <option>2021-02-05 12:00 - 2021-02-06 12:00</option>
+                        </select>
                     </div>
                 </div>
-                <div class="w-full pr-0 xl:pr-2 lg:pr-2 md:pr-0 sm:pr-0 mt-3 xl:w-1/2 pl-0 xl:pl-2 lg:pl-2 md:pl-0 sm:pl-0 mt-3 xl:w-1/2 
-                mt-3 xl:w-1/3 lg:w-full md:w-full sm:w-full">
-                    <div class="relative cont_box flex flex-wrap items-center px-5 py-6 shadow-sm rounded-md bg-2c315b">
-                        <div class="text-white w-full">
-                            <h2 class="text-lg font-bold tshaodw">
-                                캐셔레스트 자산현황
-                                <span class="float-right text-sm text-gray-400">보유비율 <span class="text-white">51%</span></span>
-                            </h2>
-                        </div>
-                        <div class="text-white text-center absolute top-2/4 left-2/4"
-                            style="z-index:2;transform: translate(-50%, -100%);">
-                            <p class="font-bold text-sm">총자산</p>
-                            <p class="mt-2 text-2xl"><b>18,769</b> 만</p>
-                            <p class="c4ba08f text-xs"><b>261.34 (+ 0.32%)</b></p>
-                        </div>
-                        <div id="main5" style="height:300px;width:100vw;">
-
-                            <script type="text/javascript">
-                                // based on prepared DOM, initialize echarts instance
-                                var myChart_top5 = echarts.init(document.getElementById('main5'));
-
-                                // specify chart configuration item and data
-                                var option = {
-                                    title: {
-                                        show: false,
-                                        text: '코인원 자산현황',
-                                        left: 'center',
-                                        textStyle: {
-                                            color: '#fff',
-                                            fontSize: 25
-                                        }
-                                    },
-                                    tooltip: {
-                                        trigger: 'item'
-                                    },
-                                    legend: {
-                                        show: false,
-                                        left: 'center',
-                                        textStyle: {
-                                            color: '#fff',
-                                            fontSize: 14
-                                        },
-                                        bottom: '0',
-                                        icon: 'circle',
-                                        itemgap: 10
-                                    },
-                                    series: [
-                                        {
-                                            type: 'pie',
-                                            radius: ['50%', '70%'],
-                                            avoidLabelOverlap: false,
-                                            color: ['#ffdd80', '#188ac6',],
-                                            data: [
-                                                { value: 30, name: '보유원화' },
-                                                { value: 30, name: '가상자산' },
-                                            ],
-                                            label: {
-                                                position: 'outer',
-                                                alignTo: 'none',
-                                                bleedMargin: 5,
-                                                color: '#fff',
-                                                show: false,
-                                            },
-                                            labelLine: {
-                                                show: false
-                                            },
-                                            itemStyle: {
-                                                normal: {
-                                                    // Set the fan shadow
-                                                    shadowBlur: 5,
-                                                    shadowColor: 'rgba(0,0,0,0.3)',
-                                                    shadowOffsetX: 0,
-                                                    shadowOffsetY: 3
-
-                                                }
-                                            },
-                                        }
-                                    ]
-                                };
-
-                                // use configuration item and data specified to show chart
-                                myChart_top5.setOption(option);
-
-                                window.addEventListener('resize', function () {
-                                    myChart_top5.resize();
-                                })
-                            </script>
-                        </div>
-                
-                        <div class="text-white w-full">
-                            <div class="mt-5">
-                                <ul>
-                                    <li class="mt-3 clear-both">
-                                        <span class="text-base text-left mr-5 font-bold text-gray-300">
-                                            <span class="c228cc3 mr-2 ">●</span>보유원화
-                                        </span>
-                                        <span class="text-base font-bold float-right">2,352,125
-                                            <span class="font-normal text-gray-300">원</span></span>
-                                    </li>
-                                    <li class="mt-3 clear-both">
-                                        <span class="text-base text-left mr-5 font-bold text-gray-300">
-                                            <span class="cffdd80  mr-2">●</span>가상자산
-                                        </span>
-                                        <span class="text-base font-bold float-right">2,352,125
-                                            <span class="font-normal text-gray-300">원</span></span>
-                                        <br />
-                                        <span class="text-sm text-gray-400 float-right">(223,760.99999 ASTA)</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                
-                    </div>
-                </div>
-                <div class="w-full pl-0 xl:pl-2 lg:pl-2 md:pl-0 sm:pl-0 mt-3 xl:w-1/2 mt-3 xl:w-1/3 lg:w-full md:w-full sm:w-full">
-                    <div class="relative cont_box flex flex-wrap items-center px-5 py-6 shadow-sm rounded-md bg-2c315b">
-                        <div class="text-white w-full">
-                            <h2 class="text-lg font-bold tshaodw">
-                                비트소닉 자산현황
-                                <span class="float-right text-sm text-gray-400">보유비율 <span class="text-white">51%</span></span>
-                            </h2>
-                        </div>
-                        <div class="text-white text-center absolute top-2/4 left-2/4"
-                            style="z-index:2;transform: translate(-50%, -100%);">
-                            <p class="font-bold text-sm">총자산</p>
-                            <p class="mt-2 text-2xl"><b>18,769</b> 만</p>
-                            <p class="c4ba08f text-xs"><b>261.34 (+ 0.32%)</b></p>
-                        </div>
-                        <div id="main6" style="height:300px;width:100vw;">
-                
-                            <script type="text/javascript">
-                                // based on prepared DOM, initialize echarts instance
-                                var myChart_top6 = echarts.init(document.getElementById('main6'));
-
-                                // specify chart configuration item and data
-                                var option = {
-                                    title: {
-                                        show: false,
-                                        text: '코인원 자산현황',
-                                        left: 'center',
-                                        textStyle: {
-                                            color: '#fff',
-                                            fontSize: 25
-                                        }
-                                    },
-                                    tooltip: {
-                                        trigger: 'item'
-                                    },
-                                    legend: {
-                                        show: false,
-                                        left: 'center',
-                                        textStyle: {
-                                            color: '#fff',
-                                            fontSize: 14
-                                        },
-                                        bottom: '0',
-                                        icon: 'circle',
-                                        itemgap: 10
-                                    },
-                                    series: [
-                                        {
-                                            type: 'pie',
-                                            radius: ['50%', '70%'],
-                                            avoidLabelOverlap: false,
-                                            color: ['#ffdd80', '#188ac6',],
-                                            data: [
-                                                { value: 30, name: '보유원화' },
-                                                { value: 30, name: '가상자산' },
-                                            ],
-                                            label: {
-                                                position: 'outer',
-                                                alignTo: 'none',
-                                                bleedMargin: 5,
-                                                color: '#fff',
-                                                show: false,
-                                            },
-                                            labelLine: {
-                                                show: false
-                                            },
-                                            itemStyle: {
-                                                normal: {
-                                                    // Set the fan shadow
-                                                    shadowBlur: 5,
-                                                    shadowColor: 'rgba(0,0,0,0.3)',
-                                                    shadowOffsetX: 0,
-                                                    shadowOffsetY: 3
-
-                                                }
-                                            },
-                                        }
-                                    ]
-                                };
-
-                                // use configuration item and data specified to show chart
-                                myChart_top6.setOption(option);
-
-                                window.addEventListener('resize', function () {
-                                    myChart_top6.resize();
-                                })
-                            </script>
-                        </div>
-                
-                        <div class="text-white w-full">
-                            <div class="mt-5">
-                                <ul>
-                                    <li class="mt-3 clear-both">
-                                        <span class="text-base text-left mr-5 font-bold text-gray-300">
-                                            <span class="c228cc3 mr-2 ">●</span>보유원화
-                                        </span>
-                                        <span class="text-base font-bold float-right">2,352,125
-                                            <span class="font-normal text-gray-300">원</span></span>
-                                    </li>
-                                    <li class="mt-3 clear-both">
-                                        <span class="text-base text-left mr-5 font-bold text-gray-300">
-                                            <span class="cffdd80  mr-2">●</span>가상자산
-                                        </span>
-                                        <span class="text-base font-bold float-right">2,352,125
-                                            <span class="font-normal text-gray-300">원</span></span>
-                                        <br />
-                                        <span class="text-sm text-gray-400 float-right">(223,760.99999 ASTA)</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="w-full flex flex-wrap cont_box mt-2">
-                <div class="w-full p-4">
-                    <div class="flex flex-wrap w-full relative">
-                        <div>
-                            <h2 class="text-xl font-bold text-white tshaodw">
-                                자산변동 상세내역
-                            </h2>
-                        </div>
-                        <div class="absolute right-0">
-                            <select
-                                class="h-full rounded-r border-t sm:rounded-r-none sm:border-r-0 border-r border-b block w-full bg-white border-gray-400 
-                                                    text-gray-700 py-1 px-2 pr-2 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500">
-                                <option>2021-02-05 12:00 - 2021-02-06 12:00</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="flex flex-col mt-8 w-full">
-                            <div class="py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-                                <table class="w-full">
-                                    <thead>
-                                        <tr>
-                                            <th>거래소</th>
-                                            <th>기간</th>
-                                            <th>시장가</th>
-                                            <th>총자산</th>
-                                            <th>보유원화</th>
-                                            <th>가상자산</th>
-                                            <th>보유수량</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="">
-                                        <tr>
-                                            <td rowspan="3">
-                                                total
-                                            </td>
-                                            <td class="text-gray-500">
-                                                2021-02-05 12:00
-                                            </td>
-                                            <td class="text-gray-500">
-                                                60.01
-                                            </td>
-                                            <td class="text-gray-500">
-                                                2,566 만
-                                            </td>
-                                            <td class="text-gray-500">
-                                                5,777 만
-                                            </td>
-                                            <td class="text-gray-500">
-                                                2,238 만
-                                            </td>
-                                            <td class="text-gray-500">
-                                                (4,032,548,48)
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                2021-02-06 12:00
-                                            </td>
-                                            <td>
-                                                60.01
-                                            </td>
-                                            <td>
-                                                2,566 만
-                                            </td>
-                                            <td>
-                                                5,777 만
-                                            </td>
-                                            <td>
-                                                2,238 만
-                                            </td>
-                                            <td>
-                                                (4,032,548,48)
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="">
-                    
-                                            </td>
-                                            <td class="">
-                    
-                                            </td>
-                                            <td class="c00e2ff">
-                                                + 2,566 만
-                                            </td>
-                                            <td class="c00e2ff">
-                                                + 5,777 만
-                                            </td>
-                                            <td class="c00e2ff">
-                                                + 2,238 만
-                                            </td>
-                                            <td class="c00e2ff">
-                                                (4,032,548,48)
-                                            </td>
-                                        </tr>
-                    
-                                        <tr>
-                                            <td rowspan="3">
-                                                코인원
-                                            </td>
-                                            <td class="text-gray-500">
-                                                2021-02-05 12:00
-                                            </td>
-                                            <td class="text-gray-500">
-                                                60.01
-                                            </td>
-                                            <td class="text-gray-500">
-                                                2,566 만
-                                            </td>
-                                            <td class="text-gray-500">
-                                                5,777 만
-                                            </td>
-                                            <td class="text-gray-500">
-                                                2,238 만
-                                            </td>
-                                            <td class="text-gray-500">
-                                                (4,032,548,48)
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                2021-02-06 12:00
-                                            </td>
-                                            <td>
-                                                60.01
-                                            </td>
-                                            <td>
-                                                2,566 만
-                                            </td>
-                                            <td>
-                                                5,777 만
-                                            </td>
-                                            <td>
-                                                2,238 만
-                                            </td>
-                                            <td>
-                                                (4,032,548,48)
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="">
-                    
-                                            </td>
-                                            <td class="">
-                    
-                                            </td>
-                                            <td class="c00e2ff">
-                                                + 2,566 만
-                                            </td>
-                                            <td class="c00e2ff">
-                                                + 5,777 만
-                                            </td>
-                                            <td class="c00e2ff">
-                                                + 2,238 만
-                                            </td>
-                                            <td class="c00e2ff">
-                                                (4,032,548,48)
-                                            </td>
-                                        </tr>
-                    
-                                        <tr>
-                                            <td rowspan="3">
-                                                캐셔레스트
-                                            </td>
-                                            <td class="text-gray-500">
-                                                2021-02-05 12:00
-                                            </td>
-                                            <td class="text-gray-500">
-                                                60.01
-                                            </td>
-                                            <td class="text-gray-500">
-                                                2,566 만
-                                            </td>
-                                            <td class="text-gray-500">
-                                                5,777 만
-                                            </td>
-                                            <td class="text-gray-500">
-                                                2,238 만
-                                            </td>
-                                            <td class="text-gray-500">
-                                                (4,032,548,48)
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                2021-02-06 12:00
-                                            </td>
-                                            <td>
-                                                60.01
-                                            </td>
-                                            <td>
-                                                2,566 만
-                                            </td>
-                                            <td>
-                                                5,777 만
-                                            </td>
-                                            <td>
-                                                2,238 만
-                                            </td>
-                                            <td>
-                                                (4,032,548,48)
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="">
-                    
-                                            </td>
-                                            <td class="">
-                    
-                                            </td>
-                                            <td class="c00e2ff">
-                                                + 2,566 만
-                                            </td>
-                                            <td class="c00e2ff">
-                                                + 5,777 만
-                                            </td>
-                                            <td class="c00e2ff">
-                                                + 2,238 만
-                                            </td>
-                                            <td class="c00e2ff">
-                                                (4,032,548,48)
-                                            </td>
-                                        </tr>
-                    
-                                        <tr>
-                                            <td rowspan="3">
-                                                비트소닉
-                                            </td>
-                                            <td class="text-gray-500">
-                                                2021-02-05 12:00
-                                            </td>
-                                            <td class="text-gray-500">
-                                                60.01
-                                            </td>
-                                            <td class="text-gray-500">
-                                                2,566 만
-                                            </td>
-                                            <td class="text-gray-500">
-                                                5,777 만
-                                            </td>
-                                            <td class="text-gray-500">
-                                                2,238 만
-                                            </td>
-                                            <td class="text-gray-500">
-                                                (4,032,548,48)
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                2021-02-06 12:00
-                                            </td>
-                                            <td>
-                                                60.01
-                                            </td>
-                                            <td>
-                                                2,566 만
-                                            </td>
-                                            <td>
-                                                5,777 만
-                                            </td>
-                                            <td>
-                                                2,238 만
-                                            </td>
-                                            <td>
-                                                (4,032,548,48)
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="">
-                    
-                                            </td>
-                                            <td class="">
-                    
-                                            </td>
-                                            <td class="c00e2ff">
-                                                + 2,566 만
-                                            </td>
-                                            <td class="c00e2ff">
-                                                + 5,777 만
-                                            </td>
-                                            <td class="c00e2ff">
-                                                + 2,238 만
-                                            </td>
-                                            <td class="c00e2ff">
-                                                (4,032,548,48)
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                <div class="flex flex-col mt-1 w-full">
+                    <div class="py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+                        <table class="w-full">
+                            <thead>
+                                <tr>
+                                    <th>거래소</th>
+                                    <th>기간</th>
+                                    <th>시장가</th>
+                                    <th>총자산</th>
+                                    <th>보유원화</th>
+                                    <th>가상자산</th>
+                                    <th>보유수량</th>
+                                </tr>
+                            </thead>
+                            <tbody class="">
+                                <tr>
+                                    <td rowspan="3">
+                                        total
+                                    </td>
+                                    <td class="text-gray-500">
+                                        2021-02-05 12:00
+                                    </td>
+                                    <td class="text-gray-500">
+                                        60.01
+                                    </td>
+                                    <td class="text-gray-500">
+                                        2,566 만
+                                    </td>
+                                    <td class="text-gray-500">
+                                        5,777 만
+                                    </td>
+                                    <td class="text-gray-500">
+                                        2,238 만
+                                    </td>
+                                    <td class="text-gray-500">
+                                        (4,032,548,48)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2021-02-06 12:00
+                                    </td>
+                                    <td>
+                                        60.01
+                                    </td>
+                                    <td>
+                                        2,566 만
+                                    </td>
+                                    <td>
+                                        5,777 만
+                                    </td>
+                                    <td>
+                                        2,238 만
+                                    </td>
+                                    <td>
+                                        (4,032,548,48)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="">
+        
+                                    </td>
+                                    <td class="">
+        
+                                    </td>
+                                    <td class="c00e2ff">
+                                        + 2,566 만
+                                    </td>
+                                    <td class="c00e2ff">
+                                        + 5,777 만
+                                    </td>
+                                    <td class="c00e2ff">
+                                        + 2,238 만
+                                    </td>
+                                    <td class="c00e2ff">
+                                        (4,032,548,48)
+                                    </td>
+                                </tr>
+        
+                                <tr>
+                                    <td rowspan="3">
+                                        코인원
+                                    </td>
+                                    <td class="text-gray-500">
+                                        2021-02-05 12:00
+                                    </td>
+                                    <td class="text-gray-500">
+                                        60.01
+                                    </td>
+                                    <td class="text-gray-500">
+                                        2,566 만
+                                    </td>
+                                    <td class="text-gray-500">
+                                        5,777 만
+                                    </td>
+                                    <td class="text-gray-500">
+                                        2,238 만
+                                    </td>
+                                    <td class="text-gray-500">
+                                        (4,032,548,48)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2021-02-06 12:00
+                                    </td>
+                                    <td>
+                                        60.01
+                                    </td>
+                                    <td>
+                                        2,566 만
+                                    </td>
+                                    <td>
+                                        5,777 만
+                                    </td>
+                                    <td>
+                                        2,238 만
+                                    </td>
+                                    <td>
+                                        (4,032,548,48)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="">
+        
+                                    </td>
+                                    <td class="">
+        
+                                    </td>
+                                    <td class="c00e2ff">
+                                        + 2,566 만
+                                    </td>
+                                    <td class="c00e2ff">
+                                        + 5,777 만
+                                    </td>
+                                    <td class="c00e2ff">
+                                        + 2,238 만
+                                    </td>
+                                    <td class="c00e2ff">
+                                        (4,032,548,48)
+                                    </td>
+                                </tr>
+        
+                                <tr>
+                                    <td rowspan="3">
+                                        캐셔레스트
+                                    </td>
+                                    <td class="text-gray-500">
+                                        2021-02-05 12:00
+                                    </td>
+                                    <td class="text-gray-500">
+                                        60.01
+                                    </td>
+                                    <td class="text-gray-500">
+                                        2,566 만
+                                    </td>
+                                    <td class="text-gray-500">
+                                        5,777 만
+                                    </td>
+                                    <td class="text-gray-500">
+                                        2,238 만
+                                    </td>
+                                    <td class="text-gray-500">
+                                        (4,032,548,48)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2021-02-06 12:00
+                                    </td>
+                                    <td>
+                                        60.01
+                                    </td>
+                                    <td>
+                                        2,566 만
+                                    </td>
+                                    <td>
+                                        5,777 만
+                                    </td>
+                                    <td>
+                                        2,238 만
+                                    </td>
+                                    <td>
+                                        (4,032,548,48)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="">
+        
+                                    </td>
+                                    <td class="">
+        
+                                    </td>
+                                    <td class="c00e2ff">
+                                        + 2,566 만
+                                    </td>
+                                    <td class="c00e2ff">
+                                        + 5,777 만
+                                    </td>
+                                    <td class="c00e2ff">
+                                        + 2,238 만
+                                    </td>
+                                    <td class="c00e2ff">
+                                        (4,032,548,48)
+                                    </td>
+                                </tr>
+        
+                                <tr>
+                                    <td rowspan="3">
+                                        비트소닉
+                                    </td>
+                                    <td class="text-gray-500">
+                                        2021-02-05 12:00
+                                    </td>
+                                    <td class="text-gray-500">
+                                        60.01
+                                    </td>
+                                    <td class="text-gray-500">
+                                        2,566 만
+                                    </td>
+                                    <td class="text-gray-500">
+                                        5,777 만
+                                    </td>
+                                    <td class="text-gray-500">
+                                        2,238 만
+                                    </td>
+                                    <td class="text-gray-500">
+                                        (4,032,548,48)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2021-02-06 12:00
+                                    </td>
+                                    <td>
+                                        60.01
+                                    </td>
+                                    <td>
+                                        2,566 만
+                                    </td>
+                                    <td>
+                                        5,777 만
+                                    </td>
+                                    <td>
+                                        2,238 만
+                                    </td>
+                                    <td>
+                                        (4,032,548,48)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="">
+        
+                                    </td>
+                                    <td class="">
+        
+                                    </td>
+                                    <td class="c00e2ff">
+                                        + 2,566 만
+                                    </td>
+                                    <td class="c00e2ff">
+                                        + 5,777 만
+                                    </td>
+                                    <td class="c00e2ff">
+                                        + 2,238 만
+                                    </td>
+                                    <td class="c00e2ff">
+                                        (4,032,548,48)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </content>
+    <script>
+        /*
+        $(document).ready(function(){
+            
+            $('.bor_cont').hide();
+            $('.dropheader').removeClass('active')
+            $('.dropdownmenu1 .bor_cont').show()
+            $('.dropdownmenu1 .dropheader').addClass('active')
+            
+            $(".dropdownmenu").click(function () {
+                if ($(this).children('.bor_cont').css("display") == "none") {
+                    $(".bor_cont").slideUp("");
+                    $(this).children('.bor_cont').slideDown("");
+                    $('.dropheader').removeClass('active')
+                    $(this).children('.dropheader').addClass('active')
+                }
+                else {
+                    $(".bor_cont").slideUp("");
+                    $('.dropheader').removeClass('active')
+                }
+            });
+        })
+    </script>
 </body>
+
 </html>

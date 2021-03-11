@@ -12,10 +12,12 @@
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.0.2/dist/echarts.min.js"></script>
     <script src="js/jquery.js"></script>
+    <script src="js/style.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style1.css" />
+    <link rel="stylesheet" href="css/hamburgers.css" />
     <title>Bot_dashboard</title>
 </head>
 
@@ -29,7 +31,7 @@
                         <img src="images/ico/nav_logo.svg" alt="" style="width:70%;margin-top:5px;" />
                     </h1>
                 </div>
-                <div class="nav text-gray-300 font-bold text-2xl float-left ml-10">
+                <div class="nav text-gray-300 font-bold text-2xl float-left ml-10 hidden lg:block">
                     <ul>
                         <li class="float-left cursor-pointer">
                             <span class="active1 tshaodw">ASTA</span>
@@ -50,6 +52,11 @@
                 </div>
             </div>
             <div class="absolute right-0">
+                <div class="hamburger hamburger--slider float-right">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
+                </div>
                 <ul class="user_setting">
                     <li class="shadow"><img src="images/ico/settings.png" alt="" />Settings</li>
                     <li class="shadow"><img src="images/ico/logout.png" alt="" />Logout</li>
@@ -58,9 +65,56 @@
         </div>
     </header>
     <content class="w-full px-5">
+        <div class="aside float-left md:block lg:hidden">
+            <div>
+                <h2 class="text-white font-bold text-xl">실시간현황</h2>
+                <div class="aside_list mb-2  mt-4 py-2 px-4 active">
+                    <dl class="flex flex-wrap text-white font-bold">
+                        <dt class="w-2/4 mt-2 text-lg"><img src="images/ico/astacoin.png" alt="" class="float-left" /> ASTA</dt>
+                        <dd class="w-2/4 text-right text-2xl">58.45<br /><span class="text-sm c4ba08f">+ 01.34% ▲</span></dd>
+                    </dl>
+                </div>
+                <div class="aside_list mb-2 py-2 px-4">
+                    <dl class="flex flex-wrap text-white font-bold">
+                        <dt class="w-2/4 mt-2 text-lg"><img src="images/ico/bmpcoin.png" alt="" class="float-left" /> BMP</dt>
+                        <dd class="w-2/4 text-right text-2xl">58.45<br /><span class="text-sm ce24545">+ 01.34% ▼</span></dd>
+                    </dl>
+                </div>
+                <div class="aside_list py-2 px-4">
+                    <dl class="flex flex-wrap text-white font-bold">
+                        <dt class="w-2/4 mt-1 text-lg"><img src="images/ico/mycecoin.png" alt="" class="float-left" /> MYCE</dt>
+                        <dd class="w-2/4 text-right text-2xl">58.45<br /><span class="text-sm c4ba08f">+ 01.34% ▲</span></dd>
+                    </dl>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-white font-bold mt-20 text-xl">상장거래소</h2>
+                <div class="text-white mb-1 mt-2 aside_list py-6 px-4 active">
+                    <span class="w-1/4 text-base">코인원</span>
+                    <div class="float-right coin_list">
+                        <span class="w-1/4 text-xl">58.45</span>
+                        <span class="w-2/4 c4ba08f text-sm  shadow">+ 01.34% ▲</span>
+                    </div>
+                </div>
+                <div class="text-white mb-1 aside_list py-6 px-4">
+                    <span class="w-1/4 text-base">캐셔리스트</span>
+                    <div class="float-right coin_list">
+                        <span class="w-1/4 text-xl">58.45</span>
+                        <span class="w-2/4 ce24545 text-sm  shadow">+ 01.34% ▼</span>
+                    </div>
+                </div>
+                <div class="text-white aside_list py-6 px-4">
+                    <span class="w-1/4 text-base">비트소닉</span>
+                    <div class="float-right coin_list">
+                        <span class="w-1/4 text-xl">58.45</span>
+                        <span class="w-2/4 c4ba08f text-sm  shadow">+ 01.34% ▲</span>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="w-full flex flex-wrap">
-            <div class="w-1/4 pr-5">
-                <div class="p-4 cont_box w-full">
+            <div class="w-full pr-0 xl:w-1/4 xl:pr-10">
+                <div class="p-4 cont_box w-full ">
                     <div class="relative flex flex-wrap items-center shadow-sm rounded-md bg-2c315b">
                         <div class="text-white w-full">
                             <h2 class="text-base font-bold tshaodw">
@@ -68,8 +122,8 @@
                             </h2>
                         </div>
                         <div class="w-full flex flex-wrap">
-                            <div class="w-1/3 2xl:w-1/2">
-                                <div id="main4" style="height:150px;width:100%" class="sm:hidden lg:hidden xl:inline-block">
+                            <div class="w-1/3 md:w-1/3 2xl:w-1/2 lg:w-1/3">
+                                <div id="main4" style="height:150px;width:100%" class="xl:inline-block">
                                     <script type="text/javascript">
                                         // based on prepared DOM, initialize echarts instance
                                         var myChart_top4 = echarts.init(document.getElementById('main4'));
@@ -147,7 +201,7 @@
                                     </script>
                                 </div>
                             </div>
-                            <div class="w-2/3 2xl:w-1/2 sm:w-full lg:w-full xl:w-2/3" >
+                            <div class="w-2/3 2xl:w-1/2 sm:w-full lg:w-2/3 xl:w-2/3 md:w-2/3" >
                                 <div class="text-white w-full">
                                     <div class="">
                                         <ul>
@@ -182,7 +236,7 @@
                     </div>
                 </div>
                 
-                <div class="">
+                <div class="hidden xl:block">
                     <h2 class="text-base font-bold text-white tshaodw mt-5">상장 거래소</h2>
                     <div class="w-full dropdownmenu dropdownmenu1 mt-3">
                         <div class="text-white p-3 cont_box shadow active dropheader">
@@ -624,8 +678,8 @@
                 </div>
                 -->
             </div>
-            <div class="w-3/4 flex flex-wrap">
-                <div class="w-1/2">
+            <div class="w-full flex flex-wrap xl:w-3/4">
+                <div class="w-full pr-0 xl:pr-10 xl:w-1/2 mt-5">
                     <div class="w-full">
                         <div class="w-full flex flex-wrap items-center shadow-sm rounded-md bg-2c315b">
                             <div class="flex flex-wrap w-full relative">
@@ -634,7 +688,7 @@
                                         자산규모 변동 추이
                                     </h2>
                                 </div>
-                                <div class="absolute right-12">
+                                <div class="absolute right-0">
                                     <ul class="tabss">
                                         <li class="on">일간</li>
                                         <li>주간</li>
@@ -642,7 +696,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div id="main1" style="height:300px;width:110%">
+                            <div id="main1" style="height:300px;width:100%">
                                 <script type="text/javascript">
                                     // based on prepared DOM, initialize echarts instance
                                     var myChart_top1 = echarts.init(document.getElementById('main1'));
@@ -722,7 +776,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-1/2 relative">
+                <div class="w-full xl:w-1/2 mt-5 relative">
                     <div class="w-full">
                         <div>
                             <h2 class="text-base font-bold text-white tshaodw">
@@ -747,7 +801,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div id="main" class="w-full" style="height:300px;width:110%">
+                    <div id="main" class="w-full" style="height:300px;width:100%">
                         <script type="text/javascript">
                             // based on prepared DOM, initialize echarts instance
                             var myChart = echarts.init(document.getElementById('main'));
@@ -907,7 +961,7 @@
                             </div>
                         </div>
                         <div class="flex flex-col mt-1 w-full">
-                            <div class="py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+                            <div class="py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8" style="white-space: nowrap;">
                                 <table class="w-full">
                                     <thead>
                                         <tr>
@@ -966,10 +1020,10 @@
                                         </tr>
                                         <tr>
                                             <td class="">
-                
+                        
                                             </td>
                                             <td class="">
-                
+                        
                                             </td>
                                             <td class="c00e2ff">
                                                 + 2,566 만
@@ -984,7 +1038,7 @@
                                                 (4,032,548,48)
                                             </td>
                                         </tr>
-                
+                        
                                         <tr>
                                             <td rowspan="3">
                                                 코인원
@@ -1030,10 +1084,10 @@
                                         </tr>
                                         <tr>
                                             <td class="">
-                
+                        
                                             </td>
                                             <td class="">
-                
+                        
                                             </td>
                                             <td class="c00e2ff">
                                                 + 2,566 만
@@ -1048,7 +1102,7 @@
                                                 (4,032,548,48)
                                             </td>
                                         </tr>
-                
+                        
                                         <tr>
                                             <td rowspan="3">
                                                 캐셔레스트
@@ -1094,10 +1148,10 @@
                                         </tr>
                                         <tr>
                                             <td class="">
-                
+                        
                                             </td>
                                             <td class="">
-                
+                        
                                             </td>
                                             <td class="c00e2ff">
                                                 + 2,566 만
@@ -1112,7 +1166,7 @@
                                                 (4,032,548,48)
                                             </td>
                                         </tr>
-                
+                        
                                         <tr>
                                             <td rowspan="3">
                                                 비트소닉
@@ -1158,10 +1212,10 @@
                                         </tr>
                                         <tr>
                                             <td class="">
-                
+                        
                                             </td>
                                             <td class="">
-                
+                        
                                             </td>
                                             <td class="c00e2ff">
                                                 + 2,566 만

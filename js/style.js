@@ -13,10 +13,10 @@ $(document).ready(function () {
         this.classList.toggle("is-active");
 
         if($(this).hasClass('is-active')){
-              $('.aside').animate({left:'0'},400).css('width','250px').css('height','100vh');
+              $('.aside').animate({left:'0'},400).css('height','100vh');
         }   
         else {
-          $('.aside').animate({left:'-500px'},400).css('width','250px').css('height','100vh');
+          $('.aside').animate({left:'-500px'},400).css('height','100vh');
         }
         
       }, false);
